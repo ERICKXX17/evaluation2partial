@@ -1,0 +1,71 @@
+<div style="margin: 20px;">
+    <h1>Catálogo de Jugadores</h1>
+
+    <h4>Alta de Jugadores</h4>
+
+    <div class="col-sm-4">
+        <p>
+            <label>Nombre:</label>
+            <input type="text" class="form-control" [(ngModel)]="jugador.nombre"/>
+        </p>
+        <p>
+            <label>Dorsal:</label>
+            <input type="number" class="form-control" [(ngModel)]="jugador.dorsal"/>
+        </p>
+        <p>
+            <label>Posición:</label>
+            <input type="text" class="form-control" [(ngModel)]="jugador.posicion"/>
+        </p>
+        <p>
+            <label>Goles:</label>
+            <input type="number" class="form-control" [(ngModel)]="jugador.goles"/>
+        </p>
+        <p>
+            <label>Equipo:</label>
+            <input type="text" class="form-control" [(ngModel)]="jugador.equipo"/>
+        </p>
+        <table>
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="this.insertarJugador()">Insertar</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-warning" (click)="this.updateJugador()">Editar</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="this.deleteJugador()">Eliminar</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <hr />
+    <h4>Listado de Jugadores</h4>
+
+    <table class="table">
+        <thead>
+            <th>Nombre</th>
+            <th>Dorsal</th>
+            <th>Posición</th>
+            <th>Goles</th>
+            <th>Equipo</th>
+            <th>Seleccionar</th>
+        </thead>
+        <tbody>
+            @for(jugador of jugadores; track jugador.id){
+                <tr>
+                    <td>{{ jugador.nombre }}</td>
+                    <td>{{ jugador.dorsal }}</td>
+                    <td>{{ jugador.posicion }}</td>
+                    <td>{{ jugador.goles }}</td>
+                    <td>{{ jugador.equipo }}</td>
+                    <td>
+                        <button type="button" class="btn btn-success" (click)="selectJugador(jugador)">
+                            Seleccionar
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

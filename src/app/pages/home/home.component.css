@@ -1,0 +1,14 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8; /* Fondo claro */
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    color: #711D1D; /* Rojo-café */
+    font-weight: bold;
+}
